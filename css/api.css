@@ -1,0 +1,45 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: gray;
+}
+
+#div-movie{
+    background-color: blue;
+    margin: 2rem 0.2rem;
+    display: flex;
+    padding: 0.5rem;
+}
+
+.img-poster{
+    width: 35vh;
+    border-radius: 12px;
+    margin: 1rem;
+    box-shadow: 3px 3px 3px black;
+    cursor: pointer;
+}
+
+.img-poster:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    box-shadow: 7px 7px 7px black;
+}
+
+.overview{
+    font-family: serif;
+    width: 30vh;
+    font-size: 1.3rem;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 12px;
+}
+
+.hide{
+    display: none;
+}
