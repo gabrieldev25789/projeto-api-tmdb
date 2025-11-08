@@ -9,34 +9,45 @@ fetch("https://api.themoviedb.org/3/movie/popular", {
 })
   .then(res => res.json())
   .then(data => data.results.forEach((result)=>{
-    const postMovie = result.poster_path
+    const backDropMovie = result.backdrop_path
     const overViewMovie = result.overview
+    const posterMovie = result.poster_path
     console.log(result)
 
-    const divMovie = document.createElement("div")
-    divMovie.id = "div-movie"
-
-    const img = document.createElement("img")
-    img.classList.add("img-poster")
-    img.src = `https://image.tmdb.org/t/p/w500${postMovie}`
-    img.addEventListener("click", () =>{
-    overView.classList.remove("hide")
-    })
-
-    const overView = document.createElement("p")
-    overView.classList.add("overview")
-    overView.classList.add("hide")
-    overView.textContent = overViewMovie
-
-    divMovie.appendChild(img)
-    divMovie.appendChild(overView)
-    infosContainer.appendChild(divMovie)
+    infos(backDropMovie, posterMovie, overViewMovie)
+    
   }))
   .catch(err => console.error(err));
 }
-
 consumirApi()
 
+
+function infos(backDropMovie, posterMovie, overViewMovie){
+  const divMovie = document.createElement("div")
+  divMovie.id = "div-movie"
+
+  const backDropImg = document.createElement("img")
+  backDropImg.classList.add("img-backdrop")
+  backDropImg.src = `https://image.tmdb.org/t/p/w500${backDropMovie}`
+
+  const posterImg = document.createElement("img")
+  posterImg.classList.add("img-poster")
+  posterImg.src = `https://image.tmdb.org/t/p/w500${posterMovie}`
+
+   posterImg.addEventListener("click", () =>{
+    overView.classList.toggle("hide")
+  })
+
+  const overView = document.createElement("p")
+  overView.classList.add("overview")
+  overView.classList.add("hide")
+  overView.textContent = overViewMovie
+
+  divMovie.appendChild(backDropImg)
+  divMovie.appendChild(posterImg)
+  divMovie.appendChild(overView)
+  infosContainer.appendChild(divMovie)
+}
 
 
 
