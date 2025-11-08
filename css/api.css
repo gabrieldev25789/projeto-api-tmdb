@@ -5,28 +5,64 @@
 }
 
 body{
-    background-color: gray;
+   background: linear-gradient(135deg, #0f0f0f, #dadada, #4d4c4c);
+   text-align: center;
 }
 
 #div-movie{
-    background-color: blue;
-    margin: 2rem 0.2rem;
+    width: 150vh;
+    margin: 2rem auto;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0f0f0f, #050505, #e6e6e6);
     display: flex;
-    padding: 0.5rem;
+    padding: 2rem;
+    align-items: center;
+    border-top: 5px solid white;
+    border-left: 5px solid white;
+    border-right: 5px solid white;
+
+}
+
+#see-overview{
+    margin: 2rem auto;
+    padding: 0.8rem;
+    border: none;
+    background: transparent;
+    border-bottom: 3px solid rgb(14, 14, 14);
+    font-size: 1.4rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.title-movie{
+    font-size: 3.5rem;
+    border-bottom: 3px solid black;
+    padding-bottom: 0.5rem;
+    width: 70vh;
+    margin: 2rem auto;
+    color: white;
+    text-align: center;
+}
+
+.img-backdrop{
+    width: 80%;
+    border-radius: 12px;
+    box-shadow: 6px 6px 6px rgb(219, 219, 219);
+    opacity: 0.7;
 }
 
 .img-poster{
     width: 35vh;
     border-radius: 12px;
     margin: 1rem;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 7px 7px 7px black;
     cursor: pointer;
 }
 
 .img-poster:hover{
     transition: 0.5s;
     transform: scale(1.05);
-    box-shadow: 7px 7px 7px black;
+    box-shadow: 7px 7px 7px rgb(219, 219, 219);
 }
 
 .overview{
@@ -42,4 +78,48 @@ body{
 
 .hide{
     display: none;
+}
+
+.show-infos{
+    width: 80vh;
+    font-size: 2rem;
+    line-height: 50px;
+    margin-left: 6rem;
+    background: bottom;
+    border-bottom: 4px solid #cdcdcd;
+    border-left: 4px solid #cdcdcd;
+    border-right: 4px solid #cdcdcd;
+    padding: 0.5rem;
+}
+
+#ul-infos{
+    background: linear-gradient(135deg, #0f0f0f, #050505, #e6e6e6);
+    border-bottom: 4px solid #cdcdcd;
+    border-left: 4px solid #cdcdcd;
+    border-right: 4px solid #cdcdcd;
+    width:120vh;
+    margin: -2rem auto;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.li-info{
+    font-size: 1.7rem;
+    border-bottom: 2px solid white;
+    color: white;
+    padding-bottom: 0.5rem;
+    width: 40vh;
+    margin: 0.5rem auto;
+    background: linear-gradient(135deg, #0f0f0f, #050505, #e6e6e6);
+    padding: 0.5rem;
+    border-radius: 8px;
+}
+
+.box-shadow{
+    box-shadow: 5px 5px 5px white;
+}
+
+.box-shadow:hover{
+    box-shadow: 7px 7px 7px rgb(0, 0, 0);
+
 }
