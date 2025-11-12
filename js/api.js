@@ -1,6 +1,9 @@
+const intro = document.querySelector("#intro")
+
 const infosContainer = document.querySelector("#infos")
 const buttonOverview = document.querySelector("#see-overview")
 
+const searchContainer = document.querySelector("#search")
 const selectTv = document.querySelector("#search-select-tv")
 const selectMovie = document.querySelector("#search-select-movie")
 
@@ -8,6 +11,8 @@ let movieSelect
 
 [selectMovie, selectTv].forEach((el) => {
   el.addEventListener("change", () => {
+    intro.classList.add("hide")
+    searchContainer.classList.remove("margin")
     const value = el.value
 
     if (el === selectMovie) {
@@ -38,9 +43,9 @@ fetch(url, {
     const titleMovie = result.original_title
 
     const titleSerie = result.name 
-    const releaseDate = result.release_date
-    const avgVote = result.vote_average
-    const countVote = result.vote_count
+    const releaseDate = formatDate(result.release_date)
+    const avgVote = (result.vote_average).toFixed(1)
+    const countVote = (result.vote_count).toLocaleString()
     const adultContent = result.adult
     console.log(result)
 
@@ -49,14 +54,13 @@ fetch(url, {
     extraInfos(releaseDate, avgVote, countVote, adultContent)
     } 
     else{
-    const releaseDate = result.first_air_date
+    const releaseDate = formatDate(result.first_air_date)
     infos(backDropMovie, posterMovie, overViewMovie, titleSerie)
     extraInfos(releaseDate, avgVote, countVote, adultContent)
     }
   }))
   .catch(err => console.error(err));
 }
-
 
 function infos(backDropMovie, posterMovie, overViewMovie, titleTvOrMovie){
   const divMovie = document.createElement("div")
@@ -95,7 +99,6 @@ function infos(backDropMovie, posterMovie, overViewMovie, titleTvOrMovie){
   infosContainer.appendChild(divMovie)
 }
 
-
 function extraInfos(releaseDate, avgVote, countVote, adultContent){
 
   const ulInfos = document.createElement("ul")
@@ -115,7 +118,7 @@ function extraInfos(releaseDate, avgVote, countVote, adultContent){
 
   const liAdult = document.createElement("li")
   liAdult.classList.add("li-info")
-  liAdult.textContent = `${adultContent === false ? "This movie is for everyone" : "This movie is only for adult people"}`
+  liAdult.textContent = `${adultContent === false ? "This content is for everyone" : "This content is only for adult people"}`
 
   ulInfos.appendChild(liRelease)
   ulInfos.appendChild(liVote)
@@ -123,6 +126,13 @@ function extraInfos(releaseDate, avgVote, countVote, adultContent){
   ulInfos.appendChild(liAdult)
   infosContainer.appendChild(ulInfos)
 }
+
+function formatDate(dateApi) {
+  const date = new Date(dateApi)
+  return date.toLocaleDateString("pt-BR")
+}
+
+
 
 
 
