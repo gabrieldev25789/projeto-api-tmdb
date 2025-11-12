@@ -9,6 +9,50 @@ body{
    text-align: center;
 }
 
+#intro{
+    width: 80vh;
+    border-radius: 10px;
+    margin: 2rem auto;
+    background-color:  rgba(0, 0, 0, 0.5);;
+    border-bottom: 2px solid black;
+    color: white;
+    padding: 1.5rem;
+}
+
+#intro p{
+    margin-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 37px;
+}
+
+#search{
+    margin-top: 2rem;
+}
+
+.select{
+    width: 30vh;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #dadada, #c9c7c7, #757474);
+    color: rgb(10, 10, 10);
+    margin: 0.7rem;
+}
+
+#see-overview{
+    margin: 2rem auto;
+    padding: 0.8rem;
+    border: none;
+    background: transparent;
+    border-bottom: 3px solid rgb(90, 89, 89);
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
 #div-movie{
     width: 150vh;
     margin: 2rem auto;
@@ -21,17 +65,6 @@ body{
     border-left: 5px solid white;
     border-right: 5px solid white;
 
-}
-
-#see-overview{
-    margin: 2rem auto;
-    padding: 0.8rem;
-    border: none;
-    background: transparent;
-    border-bottom: 3px solid rgb(14, 14, 14);
-    font-size: 1.4rem;
-    color: white;
-    text-transform: uppercase;
 }
 
 .title-movie{
@@ -121,5 +154,134 @@ body{
 
 .box-shadow:hover{
     box-shadow: 7px 7px 7px rgb(0, 0, 0);
+}
 
+.margin{
+    margin-top: 10vh !important;
+}
+
+/* --- RESPONSIVO --- */
+
+/* Telas médias (tablets) */
+@media (max-width: 1024px) {
+    #div-movie {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+    }
+
+    .img-poster {
+        width: 30vh;
+    }
+
+    .show-infos {
+        width: 90%;
+        margin-left: 0;
+        font-size: 1.6rem;
+    }
+
+    #ul-infos {
+        width: 90%;
+    }
+
+    .li-info {
+        width: 60%;
+        font-size: 1.4rem;
+    }
+
+    .title-movie {
+        width: 90%;
+        font-size: 2.5rem;
+    }
+
+    .overview {
+        width: 80%;
+        font-size: 1.1rem;
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #111, #444, #999);
+    }
+
+    #intro{
+        width: 90%;
+    }
+
+    #div-movie {
+        flex-direction: column;
+        width: 95%;
+        padding: 1rem;
+    }
+
+    .img-poster {
+        width: 60vw;
+        margin: 1rem auto;
+    }
+
+    .img-poster:hover {
+        transform: scale(1.03);
+    }
+
+    .title-movie {
+        font-size: 2rem;
+        width: 90%;
+    }
+
+    .overview {
+        width: 85%;
+        font-size: 1rem;
+    }
+
+    .show-infos {
+        width: 90%;
+        font-size: 1.3rem;
+        margin-left: 0;
+        line-height: 1.8rem;
+    }
+
+    #ul-infos {
+        width: 95%;
+        margin: -2rem auto 1rem auto;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .li-info {
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    #see-overview {
+        font-size: 1.1rem;
+        padding: 0.6rem;
+    }
+}
+
+/* Telas muito pequenas (menos de 480px) */
+@media (max-width: 480px) {
+    .title-movie {
+        font-size: 1.6rem;
+    }
+
+    .overview {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    .li-info {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .show-infos {
+        font-size: 1.1rem;
+    }
+
+    .img-poster {
+        width: 70vw;
+    }
 }
