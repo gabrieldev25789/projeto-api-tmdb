@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify API</title>
+    <title>Tmdb API</title>
     <link rel="stylesheet" href="./css/api.css">
     <script src="./js/api.js" defer></script>
 </head>
 <body>
      <header>
         <div id="intro">
-            <h1>API TMDB</h1>
+            <h1>Welcome to Tmdb API</h1>
+            <p>The TMDB API is a powerful and free resource that provides access to one of the largest collections of movie, TV show, and actor data in the world. With this API, developers can easily integrate up-to-date entertainment information into their applications — from trending films and detailed cast profiles to trailers, posters, and ratings.</p>
         </div>
      </header>
+
      <main>
-        <div id="infos"></div>
+        <div id="search" class="margin">
+            <select id="search-select-movie" class="select">
+                <option value="" selected disabled>Search Movie</option>
+                <option value="top_rated">Top rated</option>
+                <option value="popular">Popular</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="now_playing">Now playng</option>
+            </select>
+               <select id="search-select-tv" class="select">
+                <option value="" selected disabled>Search Tv show</option>
+                <option value="top_rated">Top rated</option>
+                <option value="popular">Popular</option>
+                <option value="on_the_air">On the air</option>
+                <option value="airing_today">airing today</option>
+            </select>
+        </div>
+        <div id="infos">
+            <button id="see-overview">Click in poster to see the overview</button>
+        </div>
      </main>
+
 </body>
 </html>
